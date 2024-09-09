@@ -1,5 +1,5 @@
 import { payload, sensitivePayload } from "./data";
-import { encodeSignedHmac } from "./jwt-signed";
+import { encodeSignedHmac } from "./jwt-signed-sym";
 
 const signed = encodeSignedHmac(payload);
 console.log('Signed JWT:');
