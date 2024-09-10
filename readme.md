@@ -1,14 +1,12 @@
 # generating-jwts
 
-This repository contains tools and examples for generating JSON Web Tokens (JWTs) using JavaScript/TypeScript.
+This repository contains tools and examples for generating JSON Web Tokens (JWTs) using TypeScript.
 
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [Examples](#examples)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
@@ -20,7 +18,7 @@ JSON Web Tokens (JWTs) are an open, industry standard [RFC 7519](https://tools.i
 To get started with this project, clone the repository:
 
 ```
-git clone https://github.com/yourusername/generating-jwts.git
+git clone https://github.com/dev-vs-ciso/generating-jwts.git
 cd generating-jwts
 ```
 
@@ -39,45 +37,28 @@ npm install
 
 ## Usage
 
-This project provides a simple API for generating JWTs. Here's a basic example:
+This project provides a simple API for generating JWTs:
 
-```javascript
-const { generateJWT } = require('./src/jwtGenerator');
+```bash
+npm run unsigned
+```
+generates an unsigned JWT, using the default algorithm (i.e. "none").
 
-const payload = {
-  userId: '123456',
-  username: 'johndoe'
-};
 
-const secret = 'your-secret-key';
-
-const token = generateJWT(payload, secret);
-console.log(token);
+```bash
+npm run signed-hmac
 ```
 
-## Examples
+generates a signed JWT using HMAC SHA-256.
 
-You can find more detailed examples in the `examples` directory:
-
-- `basic-jwt.js`: Demonstrates creating a simple JWT
-- `custom-claims.js`: Shows how to add custom claims to your JWT
-- `expiration.js`: Illustrates setting an expiration time for your JWT
-
-To run an example:
-
-```
-node examples/basic-jwt.js
+```bash
+npm run signed-rsa
 ```
 
-## Contributing
+generates a signed JWT using RSA SHA-256.
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+The JWTs are printed to the console, along with the decoded payload. The initial payload is defined in the `data.ts` file.
 
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## License
 

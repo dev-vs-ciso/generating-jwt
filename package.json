@@ -4,7 +4,9 @@
   "description": "A set of tools for generating JSON Web Tokens",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "unsigned": "ts-node make-unsigned.ts",
+    "signed-hmac": "ts-node make-signed.ts",
+    "signed-rsa": "ts-node make-signed-asym.ts"
   },
   "repository": {
     "type": "git",
